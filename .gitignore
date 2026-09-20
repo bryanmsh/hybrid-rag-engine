@@ -1,0 +1,44 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Data & Persistence
+data/processed/*.jsonl
+data/processed/*.pkl
+data/raw/*
+!data/raw/ml_architecture.md
+!data/raw/system_sla.txt
+!data/raw/sample_docs/
+!data/raw/.gitkeep
+*.chroma/
+chroma_db/
+qdrant_storage/
+
+# Evaluation runs
+eval/results/*.json
+
+# Secrets & Environment variables
+.env
+.env.local
+*.log
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Specifications & Internal Docs
+product_requirements_document.md
+notes.md

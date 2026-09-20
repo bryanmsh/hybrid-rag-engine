@@ -1,0 +1,18 @@
+SYSTEM SERVICE LEVEL AGREEMENT & LATENCY BUDGETS
+
+Document ID: SLA-2026-V1
+Classification: Confidential - Internal Engineering
+
+1. Latency Budgets (Local CPU Benchmark Target):
+- Dense Vector Search (Top-20 retrieval): Under 30 milliseconds.
+- Sparse BM25 Search (Top-20 retrieval): Under 10 milliseconds.
+- Cross-Encoder Scoring (Pruning 20 down to 4): Under 120 milliseconds.
+- Total Local Pipeline (Pre-Generation): Under 160 milliseconds.
+
+2. Failover and High Availability:
+The primary failover mechanism operates via automated circuit breakers. When the primary Qdrant vector cluster fails health checks for 3 consecutive polls (30 seconds), the retrieval engine automatically cascades to the local embedded Chroma vector store fallback.
+
+3. Context Limits and Token Budgets:
+- Default chunk size is configured to 512 tokens with a 64 token boundary overlap.
+- Embedding vector dimensionality is 384 utilizing sentence-transformers/all-MiniLM-L6-v2.
+- Maximum candidate context window sent to the generator is 2048 tokens across top-4 reranked passages.
