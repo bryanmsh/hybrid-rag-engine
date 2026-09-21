@@ -1,6 +1,6 @@
-# Production-Grade Hybrid RAG Engine with Automated Evaluation
+# Modular Hybrid RAG Engine with Cross-Encoder Reranking
 
-A modular, production-hardened Retrieval-Augmented Generation (RAG) system featuring dense semantic vector search, sparse BM25 retrieval, Reciprocal Rank Fusion (RRF), Cross-Encoder reranking, and an automated Ragas evaluation suite.
+A modular search and retrieval engine built in Python featuring dense semantic vector search, sparse BM25 retrieval, Reciprocal Rank Fusion (RRF), and Cross-Encoder reranking.
 
 ---
 
