@@ -74,7 +74,7 @@ def test_chunker_overlap_retention():
 
 def test_chunk_document_provenance():
     """Verify that chunk_document correctly binds Document metadata and indexes."""
-    chunker = RecursiveBoundaryChunker(chunk_size=25, chunk_overlap=5)
+    chunker = RecursiveBoundaryChunker(chunk_size=10, chunk_overlap=2)
     doc = Document(
         content="First part of document.\n\nSecond part of document with more details.",
         document_id="spec_v1.pdf",

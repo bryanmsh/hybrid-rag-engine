@@ -8,6 +8,9 @@ from src.ingestion.pipeline import IngestionPipeline
 
 
 def main():
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+
     parser = argparse.ArgumentParser(description="Ingest and chunk raw documents.")
     parser.add_argument(
         "--source-dir",
